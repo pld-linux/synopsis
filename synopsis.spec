@@ -1,4 +1,5 @@
 Summary:	Synopsis - a source code introspection tool
+Summary(pl):	Synopsis - narzêdzie do badania kodu ¼ród³owego
 Name:		synopsis
 Version:	0.8
 Release:	0.1
@@ -24,6 +25,17 @@ Synopsis provides a framework of C++ and Python APIs to access
 these representations and allows Processor objects to be defined
 and composed into processing pipelines, making this framework very
 flexible and extensible.
+
+%description -l pl
+Synopsis to narzêdzie do badania kodu ¼ród³owego w wielu jêzykach
+udostêpniaj±ce wiele reprezentacji przeanalizowanego kodu, aby
+umo¿liwiæ dalsze przetwarzanie takie jak tworzenie dokumentacji,
+reverse engineering i t³umaczenie source-to-source.
+
+Synopsis udostêpnia szkielety API w C++ i Pythonie pozwalaj±ce na
+dostêp do tych reprezentacji i umo¿liwiaj±ce definiowanie obiektów
+Processor i umieszczanie ich w potokach przetwarzania, co czyni ten
+szkielet bardzo elastycznym i rozszerzalnym.
 
 %package devel
 Summary:	Synopsis - header files
@@ -66,5 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/Synopsis
 
 %files devel
+%defattr(644,root,root,755)
 %{_includedir}/Synopsis
 %{_pkgconfigdir}/*.pc
