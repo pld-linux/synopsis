@@ -2,7 +2,7 @@ Summary:	Synopsis - a source code introspection tool
 Summary(pl):	Synopsis - narzêdzie do badania kodu ¼ród³owego
 Name:		synopsis
 Version:	0.8
-Release:	0.1
+Release:	1
 License:	LGPL
 Group:		Development/Tools
 Source0:	http://synopsis.fresco.org/download/%{name}-%{version}.tar.gz
@@ -10,9 +10,10 @@ Source0:	http://synopsis.fresco.org/download/%{name}-%{version}.tar.gz
 URL:		http://synopsis.fresco.org/
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
-BuildRequires:	python
 BuildRequires:	python-devel
-%pyrequires_eq	python-modules
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
+%pyrequires_eq	python-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -63,9 +64,11 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+python setup.py install \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
 
-find $RPM_BUILD_ROOT%{py_sitedir} -name \*.py -exec rm -f {} \;
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
