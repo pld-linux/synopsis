@@ -1,5 +1,5 @@
 Summary:	Synopsis - a source code introspection tool
-Summary(pl):	Synopsis - narzêdzie do badania kodu ¼ród³owego
+Summary(pl.UTF-8):   Synopsis - narzÄ™dzie do badania kodu ÅºrÃ³dÅ‚owego
 Name:		synopsis
 Version:	0.8
 Release:	1
@@ -27,28 +27,28 @@ these representations and allows Processor objects to be defined
 and composed into processing pipelines, making this framework very
 flexible and extensible.
 
-%description -l pl
-Synopsis to narzêdzie do badania kodu ¼ród³owego w wielu jêzykach
-udostêpniaj±ce wiele reprezentacji przeanalizowanego kodu, aby
-umo¿liwiæ dalsze przetwarzanie takie jak tworzenie dokumentacji,
-reverse engineering i t³umaczenie source-to-source.
+%description -l pl.UTF-8
+Synopsis to narzÄ™dzie do badania kodu ÅºrÃ³dÅ‚owego w wielu jÄ™zykach
+udostÄ™pniajÄ…ce wiele reprezentacji przeanalizowanego kodu, aby
+umoÅ¼liwiÄ‡ dalsze przetwarzanie takie jak tworzenie dokumentacji,
+reverse engineering i tÅ‚umaczenie source-to-source.
 
-Synopsis udostêpnia szkielety API w C++ i Pythonie pozwalaj±ce na
-dostêp do tych reprezentacji i umo¿liwiaj±ce definiowanie obiektów
+Synopsis udostÄ™pnia szkielety API w C++ i Pythonie pozwalajÄ…ce na
+dostÄ™p do tych reprezentacji i umoÅ¼liwiajÄ…ce definiowanie obiektÃ³w
 Processor i umieszczanie ich w potokach przetwarzania, co czyni ten
 szkielet bardzo elastycznym i rozszerzalnym.
 
 %package devel
 Summary:	Synopsis - header files
-Summary(pl):	Synopsis - pliki nag³ówkowe
+Summary(pl.UTF-8):   Synopsis - pliki nagÅ‚Ã³wkowe
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Synopsis - header files.
 
-%description devel -l pl
-Synopsis - pliki nag³ówkowe.
+%description devel -l pl.UTF-8
+Synopsis - pliki nagÅ‚Ã³wkowe.
 
 %prep
 %setup -q
