@@ -1,5 +1,5 @@
 Summary:	Synopsis - a source code introspection tool
-Summary(pl.UTF-8):   Synopsis - narzędzie do badania kodu źródłowego
+Summary(pl.UTF-8):	Synopsis - narzędzie do badania kodu źródłowego
 Name:		synopsis
 Version:	0.8
 Release:	1
@@ -40,7 +40,7 @@ szkielet bardzo elastycznym i rozszerzalnym.
 
 %package devel
 Summary:	Synopsis - header files
-Summary(pl.UTF-8):   Synopsis - pliki nagłówkowe
+Summary(pl.UTF-8):	Synopsis - pliki nagłówkowe
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
