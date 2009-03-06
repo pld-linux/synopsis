@@ -1,12 +1,12 @@
 Summary:	Synopsis - a source code introspection tool
 Summary(pl.UTF-8):	Synopsis - narzędzie do badania kodu źródłowego
 Name:		synopsis
-Version:	0.8
+Version:	0.11
 Release:	1
 License:	LGPL
 Group:		Development/Tools
 Source0:	http://synopsis.fresco.org/download/%{name}-%{version}.tar.gz
-# Source0-md5:	3001e54cf4af937c2fd7377a1debdbac
+# Source0-md5:	c9b10905246c3de958fd72722520b09e
 URL:		http://synopsis.fresco.org/
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
@@ -70,15 +70,22 @@ python setup.py install \
 
 %py_postclean
 
+# clean this html stuff
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README share/doc/Synopsis/html/*
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/libSynopsis.so
+%doc NEWS README share/doc/synopsis/print/*.pdf
+%attr(755,root,root) %{_bindir}/sxr-server
+%attr(755,root,root) %{_bindir}/synopsis
+%attr(755,root,root) %{_libdir}/libSynopsis.so*
 %{py_sitedir}/Synopsis
+%{py_sitedir}/%{name}-%{version}-*.egg-info
+%{_mandir}/man1/sxr-server.1*
+%{_mandir}/man1/synopsis.1*
 
 %files devel
 %defattr(644,root,root,755)
