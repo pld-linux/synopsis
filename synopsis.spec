@@ -16,6 +16,9 @@ BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_libdir		%{_prefix}/lib
+%define		_pkgconfigdir	%{_prefix}/lib/pkgconfig
+
 %description
 Synopsis is a multi-language source code introspection tool that
 provides a variety of representations for the parsed code to enable
@@ -75,6 +78,9 @@ python setup.py install \
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
